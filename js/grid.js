@@ -30,11 +30,13 @@ Grid.prototype.build = function () {
 
 
 // Find the first available random position
+// Note: Temporarily derandomized
 Grid.prototype.randomAvailableCell = function () {
   var cells = this.availableCells();
 
   if (cells.length) {
-    return cells[Math.floor(Math.random() * cells.length)];
+    //return cells[Math.floor(Math.random() * cells.length)];
+    return cells[0];
   }
 };
 
@@ -118,9 +120,11 @@ Grid.prototype.addStartTiles = function () {
 };
 
 // Adds a tile in a random position
+// Note: Temporarily derandomized
 Grid.prototype.addRandomTile = function () {
   if (this.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? 2 : 4;
+    //var value = Math.random() < 0.9 ? 2 : 4;
+    var value = 2;
     //var value = Math.random() < 0.9 ? 256 : 512;
     var tile = new Tile(this.randomAvailableCell(), value);
 
